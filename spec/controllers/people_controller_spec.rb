@@ -8,10 +8,8 @@ RSpec.describe PeopleController, type: :controller do
 
       person = build(:person)
 
-      expect(person).to be_valid
-
-      #post :create, person: instanciate_person_params(person)
-      #expect(Person.all.count > 0 ).to be true
+      post :create, person: instanciate_person_params(person)
+      expect(assigns(:person).id.nil?).to be false
 
     end
 

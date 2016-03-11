@@ -4,13 +4,7 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(person_params)
-
-    if @person.save
-      puts "Salvou !"
-    else
-      puts "Não salvou :("
-    end
-     
+    @person.save
     render nothing: true
   end
 
